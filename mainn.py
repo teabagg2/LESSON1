@@ -15,5 +15,6 @@ while attempts > 0:
     if guess > secret:
         print("Too High! Try again.")
     attempts -= 1
-      
+print("OOPS! You exhausted all your attempts.") 
+
 
