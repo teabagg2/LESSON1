@@ -1,0 +1,69 @@
+# Student Marks List Analyzer
+
+# Step 1: Create an empty list and a marks list
+empty_list = []
+
+marks = [85, 72, 91, 68, 79]
+
+print("Student Marks List Analyzer")
+print("---------------------------")
+print("Marks list:", marks)
+
+# Step 2: Repeat a sample list
+sample_marks = [50, 60]
+repeated_marks = sample_marks * 3
+
+print("\nRepeated sample list:", repeated_marks)
+
+# Step 3: Find the list length
+print("\nNumber of marks:", len(marks))
+
+# Step 4: Access items with indexing
+print("First mark:", marks[0])
+print("Last mark:", marks[len(marks) - 1])
+
+# Step 5: Access a range with slicing
+print("First three marks:", marks[0:3])
+print("Reversed marks:", marks[::-1])
+
+# Step 6: Create a function to check first and last digits
+def check_first_last_digit(number):
+    number = abs(number)
+    first_digit = int(str(number)[0])
+    last_digit = number % 10
+
+    if first_digit == last_digit:
+        return True
+    else:
+        return False
+
+
+print("\nChecking first and last digits:")
+
+for mark in marks:
+    if check_first_last_digit(mark):
+        print(mark, "- First and last digits match")
+    else:
+        print(mark, "- First and last digits do not match")
+
+# Calculate the total using a for loop
+total = 0
+
+for mark in marks:
+    total += mark
+
+# Step 7: Calculate summary values
+average = total / len(marks)
+
+sorted_marks = sorted(marks)
+
+smallest = sorted_marks[0]
+largest = sorted_marks[len(sorted_marks) - 1]
+
+# Final Summary
+print("\nStudent Marks Summary")
+print("---------------------")
+print("Total marks:", total)
+print("Average mark:", average)
+print("Smallest mark:", smallest)
+print("Largest mark:", largest)
