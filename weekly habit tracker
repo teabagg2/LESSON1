@@ -1,0 +1,73 @@
+# Weekly Habit Tracker
+
+# Step 1: Create the Habit Information Tuple
+habit_info = ("Exercise", True, 30, 45.5)
+
+print("Weekly Habit Tracker")
+print("--------------------")
+print("Habit information:", habit_info)
+
+# Step 2: Create the Weekly Habit Tuple
+# 1 = completed, 0 = missed
+weekly_habits = (1, 1, 0, 1, 0, 1, 1)
+
+print("Weekly habits:", weekly_habits)
+
+# Step 3: Find the Tuple Length
+print("\nNumber of days:", len(weekly_habits))
+
+# Step 4: Access Items with Indexing
+print("Day 1:", weekly_habits[0])
+print("Day 4:", weekly_habits[3])
+
+# Step 5: Access a Range with Slicing
+print("First 3 days:", weekly_habits[0:3])
+print("Last 2 days:", weekly_habits[5:7])
+
+# Step 6: Show Tuple Immutability
+# Tuples cannot be changed directly.
+# Instead, create a new tuple using +.
+new_weekly_habits = weekly_habits + (0,)
+
+print("\nOriginal tuple:", weekly_habits)
+print("New tuple:", new_weekly_habits)
+
+# Step 7: Count and Compare Habit Progress
+completed_days = weekly_habits.count(1)
+missed_days = weekly_habits.count(0)
+
+print("\nCompleted days:", completed_days)
+print("Missed days:", missed_days)
+
+# Use a loop to count completed and missed days
+completed_loop = 0
+missed_loop = 0
+
+for day in weekly_habits:
+    if day == 1:
+        completed_loop += 1
+    else:
+        missed_loop += 1
+
+print("Completed days using loop:", completed_loop)
+print("Missed days using loop:", missed_loop)
+
+# Progress message
+if completed_days > missed_days:
+    progress_message = "Great job! You completed more days than you missed."
+elif completed_days == missed_days:
+    progress_message = "Keep going! Your completed and missed days are equal."
+else:
+    progress_message = "Keep working on your habit. You missed more days than you completed."
+
+# Step 8: Final Summary
+print("\nWeekly Habit Tracker Summary")
+print("----------------------------")
+print("Habit:", habit_info[0])
+print("Active:", habit_info[1])
+print("Total planned days:", habit_info[2])
+print("Average time:", habit_info[3], "minutes")
+print("Weekly completion:", weekly_habits)
+print("Completed:", completed_days)
+print("Missed:", missed_days)
+print("Progress:", progress_message)
