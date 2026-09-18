@@ -1,0 +1,97 @@
+# Student Subject Record Cleaner
+
+# Step 1: Create the Student Dictionary
+student_data = {
+    "id1": {
+        "name": "Tasha",
+        "class": "Software Programming",
+        "subject": "Python"
+    },
+    "id2": {
+        "name": "Daniel",
+        "class": "Software Programming",
+        "subject": "Java"
+    },
+    "id3": {
+        "name": "Tasha",
+        "class": "Software Programming",
+        "subject": "Python"
+    },
+    "id4": {
+        "name": "Keisha",
+        "class": "Information Technology",
+        "subject": "Networking"
+    }
+}
+
+# Step 2: Display the Original Records
+print("=== ORIGINAL STUDENT RECORDS ===")
+print(student_data)
+
+
+# Step 3: Access Values Safely
+print("\n=== SAFE ACCESS USING GET() ===")
+
+print("id1:", student_data.get("id1", "Not Found"))
+print("id5:", student_data.get("id5", "Not Found"))
+
+
+# Step 4: Add a New Student Record
+student_data["id5"] = {
+    "name": "Marcus",
+    "class": "Software Programming",
+    "subject": "Python"
+}
+
+print("\n=== AFTER ADDING ID5 ===")
+print(student_data)
+
+
+# Step 5: Update an Existing Record
+student_data["id2"]["subject"] = "Python"
+
+print("\n=== AFTER UPDATING ID2 ===")
+print(student_data)
+
+
+# Step 6: Remove Duplicate Records
+cleaned_data = {}
+seen_records = []
+
+for student_id, details in student_data.items():
+
+    # Create a combination of name, class, and subject
+    record = (
+        details["name"],
+        details["class"],
+        details["subject"]
+    )
+
+    # Keep only the first unique combination
+    if record not in seen_records:
+        seen_records.append(record)
+        cleaned_data[student_id] = details
+
+print("\n=== CLEANED RECORDS ===")
+print(cleaned_data)
+
+
+# Step 7: Remove One Record and Check Length
+student_data.pop("id4")
+
+print("\n=== AFTER REMOVING ID4 ===")
+print(student_data)
+
+print("\nNumber of student records left:", len(student_data))
+
+
+# Step 8: Iterate and Print Final Records
+print("\n=== FINAL STUDENT RECORDS ===")
+
+for student_id, details in student_data.items():
+    print(
+        student_id,
+        "- Name:", details["name"],
+        "| Class:", details["class"],
+        "| Subject:", details["subject"]
+    )
