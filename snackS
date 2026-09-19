@@ -1,0 +1,34 @@
+snacks1 = {"cookies", "muffin", "juice", "cookies", "banana"}
+snacks2 = {"juice", "banana", "sandwich", "juice"}
+
+print("First Snack Box:", snacks1)
+print("Second Snack Box:", snacks2)
+
+snacks1.add("popcorn")
+print("First Snack Box after adding popcorn:", snacks1)
+
+shared = snacks1.intersection(snacks2)
+print("Snacks shared by both boxes:", shared)
+
+import array as arr
+
+counts = arr.array("i", [7, 3, 5, 8])
+print("Snack counts:", counts)
+
+counts.insert(0, 4)
+counts.append(6)
+print("Updated snack counts:", counts)
+
+five_count = counts.count(5)
+print("Number of 5s:", five_count)
+
+counts.reverse()
+print("Reversed counts:", counts)
+
+print()
+print("===== MY SCHOOL SNACK COUNTER =====")
+print("First Snack Box:", snacks1)
+print("Second Snack Box:", snacks2)
+print("Shared Snacks:", shared)
+print("Final Counts:", counts)
+print("===================================")
