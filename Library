@@ -1,0 +1,57 @@
+# Library Book Availability Checker
+# Advanced Python Functions
+
+# 1. Create book names and copy counts
+books = [
+    "Python Basics",
+    "Data Structures",
+    "Advanced Python",
+    "Web Development",
+    "Machine Learning"
+]
+
+copy_counts = [5, 0, 3, 2, 0]
+
+
+# 2. Pair book names with copy counts using zip()
+book_inventory = dict(zip(books, copy_counts))
+
+print("Library Inventory:")
+print(book_inventory)
+
+
+# 3. Filter books that are available
+available_books = {
+    book: copies
+    for book, copies in book_inventory.items()
+    if copies > 0
+}
+
+print("\nAvailable Books:")
+print(available_books)
+
+
+# 4. Update late fees using map()
+late_fees = [2, 4, 6, 8, 10]
+
+updated_fees = list(map(lambda fee: fee + 1, late_fees))
+
+print("\nUpdated Late Fees:")
+print(updated_fees)
+
+
+# 5. Combine book names with late fees using zip()
+book_fees = dict(zip(books, updated_fees))
+
+print("\nBook Late Fees:")
+print(book_fees)
+
+
+# 6. Check whether a chosen book is available
+chosen_book = "Data Structures"
+
+if book_inventory[chosen_book] == 0:
+    print(f"\n{chosen_book} is unavailable.")
+    exit()
+
+print(f"\n{chosen_book} is available!")
