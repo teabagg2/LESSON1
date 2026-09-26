@@ -1,0 +1,26 @@
+
+grades = { "Alice":85 , "Jacob":81 , "Chantel":95, "Brian":67 , "Erica":78}
+
+total = 0
+for score in grades.values():
+    total += score
+average = total/len (grades)
+
+print("CLASS GRADES")
+for name, score in grades.items():
+    print(f"{name}:{score}")
+
+print(f"Class Average:{average} ")
+top_student = max(grades, key = grades.get)
+bottom_student = min(grades, key = grades.get)
+print(f"Top Student: {top_student} with score {grades[top_student]}")
+print(f"Bottom Student: {bottom_student} with score {grades[bottom_student]}")
+
+search_name = input("\nEnter a student name to look up their grade: ")
+
+result = grades.get(search_name.title())
+
+if result is not None:
+    print(f"{search_name}'s grade is {result}.")
+else:
+    print("Student not found. Please check the spelling and try again.")
